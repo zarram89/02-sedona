@@ -3,7 +3,9 @@
 
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Каталог</title>
+    <link rel="stylesheet" href="styles/styles.css">
   </head>
 
   <body>
@@ -24,7 +26,7 @@
             </a>
           </li>
           <li class="navigation-item">
-            <a class="navigation-link navigation-link-current" href="catalog.html">
+            <a class="navigation-link navigation-link-current">
               Гостиницы
             </a>
           </li>
@@ -46,13 +48,13 @@
             </a>
           </li>
         </ul>
-        <a class="button" href="#">Хочу сюда</a>
+        <a class="button" href="#">Хочу сюда!</a>
       </nav>
     </header>
 
     <main class="main-inner">
       <header class="inner-header">
-        <h1 class="catalog-title">
+        <h1 class="inner-header-title">
           Гостиницы Седоны
         </h1>
 
@@ -71,25 +73,25 @@
           </li>
         </ul>
 
-        <section class="catalog-filter">
+        <section class="filter">
           <h2 class="visually-hidden">Фильтры</h2>
-          <form class="catalog-filter-form" action="https://echo.htmlacademy.ru/" method="get">
-            <fieldset class="catalog-filter-group">
-              <legend class="catalog-filter-title">Инфраструктура:</legend>
-              <ul class="catalog-filter-list">
-                <li class="catalog-filter-item">
+          <form class="filter-form" action="https://echo.htmlacademy.ru/" method="get">
+            <fieldset class="filter-group">
+              <legend class="filter-title">Инфраструктура:</legend>
+              <ul class="filter-list">
+                <li class="filter-item">
                   <label class="control">
                     <input class="control-input" type="checkbox" name="pool" checked>
                     Бассейн
                   </label>
                 </li>
-                <li class="catalog-filter-item">
+                <li class="filter-item">
                   <label class="control">
                     <input class="control-input" type="checkbox" name="parking" checked>
                     Парковка
                   </label>
                 </li>
-                <li class="catalog-filter-item">
+                <li class="filter-item">
                   <label class="control">
                     <input class="control-input" type="checkbox" name="wifi">
                     Wi-Fi
@@ -97,22 +99,22 @@
                 </li>
               </ul>
             </fieldset>
-            <fieldset class="catalog-filter-group">
-              <legend class="catalog-filter-title">Тип жилья:</legend>
-              <ul class="catalog-filter-list">
-                <li class="catalog-filter-item">
+            <fieldset class="filter-group">
+              <legend class="filter-title">Тип жилья:</legend>
+              <ul class="filter-list">
+                <li class="filter-item">
                   <label class="control">
                     <input class="control-input" type="radio" name="type" value="hotel" checked>
                     Гостиница
                   </label>
                 </li>
-                <li class="catalog-filter-item">
+                <li class="filter-item">
                   <label class="control">
                     <input class="control-input" type="radio" name="type" value="motel">
                     Мотель
                   </label>
                 </li>
-                <li class="catalog-filter-item">
+                <li class="filter-item">
                   <label class="control">
                     <input class="control-input" type="radio" name="type" value="apartment">
                     Апартаменты
@@ -120,8 +122,8 @@
                 </li>
               </ul>
             </fieldset>
-            <fieldset class="catalog-filter-group">
-              <legend class="catalog-filter-title">
+            <fieldset class="filter-group">
+              <legend class="filter-title">
                 Стоимость, ₽:
               </legend>
 
@@ -138,30 +140,32 @@
               <input type="range" name="min-price-range" min="0" max="9000">
               <input type="range" name="max-price-range" min="0" max="9000">
             </fieldset>
-            <button class="button" type="submit">Применить</button>
-            <button class="button" type="reset">Сбросить</button>
+            <button class="button button-second" type="submit">Применить</button>
+            <button class="button button-reset" type="reset">Сбросить</button>
           </form>
         </section>
       </header>
 
       <section class="catalog">
-        <p>Найдено гостиниц: 38</p>
+        <div class="sorting-container">
+          <h2>Найдено гостиниц: 38</h2>
 
-        <select class="select-control" aria-label="Сортировка">
-          <option value="popular">Сначала популярные</option>
-          <option value="cheap" selected>Сначала дешёвые</option>
-          <option value="expensive">Сначала дорогие</option>
-        </select>
+          <select class="select-control" aria-label="Сортировка">
+            <option value="popular">Сначала популярные</option>
+            <option value="cheap" selected>Сначала дешёвые</option>
+            <option value="expensive">Сначала дорогие</option>
+          </select>
 
-        <a class="button button-current" href="catalog.html?view=list">
-          <span class="visually-hidden">Показать список</span>
-        </a>
-        <a class="button" href="catalog.html?view=card">
-          <span class="visually-hidden">Показать карточки</span>
-        </a>
-        <a class="button" href="catalog.html?view=tile">
-          <span class="visually-hidden">Показать таблицу</span>
-        </a>
+          <a class="button button-current" href="catalog.html?view=list">
+            <span class="visually-hidden">Показать список</span>
+          </a>
+          <a class="button" href="catalog.html?view=card">
+            <span class="visually-hidden">Показать карточки</span>
+          </a>
+          <a class="button" href="catalog.html?view=tile">
+            <span class="visually-hidden">Показать таблицу</span>
+          </a>
+        </div>
 
         <ul class="catalog-list">
           <li class="catalog-card">
@@ -182,7 +186,7 @@
             <a class="button catalog-card-extra" href="#">
               Подробнее
             </a>
-            <button class="catalog-card-favorite" type="button">
+            <button class="button button-second" type="button">
               В избранное
             </button>
             <p class="catalog-card-stars">
@@ -198,7 +202,7 @@
 
         <ul class="pagination">
           <li class="pagination-item">
-            <a class="pagination-link pagination-current">1</a>
+            <a class="pagination-link pagination-link-current">1</a>
           </li>
           <li class="pagination-item">
             <a class="pagination-link" href="#">2</a>
